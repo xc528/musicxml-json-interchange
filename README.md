@@ -1,4 +1,5 @@
 # MusicXML JSON Interchange
+[![Tests](https://github.com/xc528/musicxml-json-interchange/actions/workflows/tests.yml/badge.svg)](https://github.com/xc528/musicxml-json-interchange/actions/workflows/tests.yml)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Schema](https://img.shields.io/badge/Schema-JSON%202020--12-blue)
