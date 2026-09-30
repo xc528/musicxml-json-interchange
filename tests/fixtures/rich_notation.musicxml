@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<score-partwise version="4.0">
+  <work><work-title>V3 Fidelity 测试</work-title></work>
+  <identification><creator type="composer">测试者</creator></identification>
+  <part-list>
+    <score-part id="P1"><part-name>Piano</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>4</divisions><staves>2</staves>
+        <key number="1"><fifths>0</fifths><mode>major</mode></key>
+        <time number="1" symbol="common"><beats>3+2</beats><beat-type>8</beat-type></time>
+        <clef number="1"><sign>G</sign><line>2</line></clef>
+        <clef number="2"><sign>F</sign><line>4</line><clef-octave-change>-1</clef-octave-change></clef>
+      </attributes>
+      <direction placement="above"><direction-type><rehearsal>A</rehearsal><words>Allegro</words><metronome><beat-unit>quarter</beat-unit><beat-unit-dot/><per-minute>96</per-minute></metronome><wedge type="crescendo" number="1"/></direction-type><offset>0</offset><voice>1</voice><staff>1</staff><sound tempo="144"/></direction>
+      <note id="N1"><grace slash="yes" steal-time-following="10"/><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><voice>1</voice><staff>1</staff></note>
+      <note id="N2"><pitch><step>F</step><alter>0</alter><octave>4</octave></pitch><duration>2</duration><tie type="start"/><voice>1</voice><type>eighth</type><dot/><accidental cautionary="yes" editorial="no">natural</accidental><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type><normal-dot/></time-modification><staff>1</staff><beam number="1">begin</beam><notations><tied type="start" number="1"/><slur type="start" number="1"/><slur type="start" number="2"/><tuplet type="start" number="1" bracket="yes" show-number="both"/><articulations><staccato/><scoop/></articulations><ornaments><trill-mark/><wavy-line type="start" number="1"/><accidental-mark>sharp</accidental-mark></ornaments><technical><string>2</string><fret>3</fret></technical></notations><lyric number="1" name="main"><syllabic>begin</syllabic><text>你</text><elision>‿</elision><text>好</text><extend type="start"/></lyric></note>
+      <note id="N3"><chord/><pitch><step>A</step><octave>4</octave></pitch><duration>2</duration><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><notations><slur type="continue" number="2"/></notations></note>
+      <note id="N4"><pitch><step>F</step><octave>4</octave></pitch><duration>2</duration><tie type="stop"/><voice>1</voice><type>eighth</type><time-modification><actual-notes>3</actual-notes><normal-notes>2</normal-notes><normal-type>eighth</normal-type></time-modification><staff>1</staff><beam number="1">end</beam><notations><tied type="stop" number="1"/><slur type="stop" number="1"/><slur type="stop" number="2"/><tuplet type="stop" number="1"/></notations><lyric number="1"><syllabic>end</syllabic><text>啊</text><extend type="stop"/></lyric></note>
+      <backup><duration>4</duration></backup>
+      <note id="N5"><rest/><duration>4</duration><voice>2</voice><type>quarter</type><staff>2</staff></note>
+      <direction placement="below"><direction-type><dynamics><sfz/></dynamics><pedal type="start" line="yes"/><octave-shift type="down" size="8" number="1"/><segno/><coda/></direction-type><voice>2</voice><staff>2</staff></direction>
+      <barline location="right"><bar-style>light-heavy</bar-style><ending number="1, 2" type="discontinue">1–2</ending><repeat direction="backward" times="3" winged="double-curved"/></barline>
+    </measure>
+  </part>
+</score-partwise>

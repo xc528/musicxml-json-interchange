@@ -1,0 +1,630 @@
+{
+  "schema_version": "1.0.0",
+  "generator": {
+    "name": "musicxml-json-interchange",
+    "version": "1.0.0"
+  },
+  "title": "Simple Scale",
+  "metadata": {
+    "title": "Simple Scale",
+    "composer": "Synthetic fixture",
+    "composers": [
+      "Synthetic fixture"
+    ],
+    "lyricist": null,
+    "lyricists": [],
+    "movement_title": "simple.musicxml",
+    "movement_number": null,
+    "copyright": null,
+    "source": {
+      "work_number": null,
+      "work_title": "Simple Scale",
+      "movement_number": null,
+      "movement_title": null,
+      "creators": [
+        {
+          "type": "composer",
+          "text": "Synthetic fixture"
+        }
+      ],
+      "rights": []
+    }
+  },
+  "parts": [
+    {
+      "id": "P1",
+      "measures": [
+        {
+          "number": "1",
+          "implicit": false,
+          "width_ignored": false,
+          "divisions": 2,
+          "duration": 4,
+          "duration_fraction": "4",
+          "voices": [
+            {
+              "id": "1",
+              "events": [
+                {
+                  "type": "note",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": null,
+                    "xml_event_index": 3,
+                    "xml_id": "n1",
+                    "source_id": "n1"
+                  },
+                  "xml_event_index": 3,
+                  "offset": 0,
+                  "offset_fraction": "0",
+                  "duration": 1,
+                  "duration_source": {
+                    "quarter_length": 1,
+                    "quarter_length_fraction": "1",
+                    "xml_duration": 2,
+                    "divisions": 2,
+                    "type": "quarter",
+                    "dots": 0
+                  },
+                  "written_type": "quarter",
+                  "dots": 0,
+                  "voice": "1",
+                  "staff": null,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [],
+                  "tuplets": [],
+                  "lyrics": [],
+                  "ties": {
+                    "sound": [],
+                    "notation": []
+                  },
+                  "slurs": [],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "n1"
+                  },
+                  "pitch": {
+                    "step": "C",
+                    "alter": 0,
+                    "octave": 4
+                  },
+                  "step": "C",
+                  "alter": 0,
+                  "octave": 4,
+                  "accidental_details": {
+                    "value": null,
+                    "explicit": false,
+                    "cautionary": false,
+                    "editorial": false,
+                    "attributes": {}
+                  },
+                  "accidental": null,
+                  "normalized_music21": {
+                    "type": "note",
+                    "step": "C",
+                    "alter": 0,
+                    "accidental": null,
+                    "accidental_explicit": null,
+                    "octave": 4,
+                    "duration": 1,
+                    "written_type": "quarter",
+                    "dots": 0,
+                    "offset": 0,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [],
+                    "beams": [],
+                    "lyrics": [],
+                    "ties": [],
+                    "slurs": [],
+                    "articulations": [],
+                    "ornaments": [],
+                    "source_staff": null
+                  }
+                },
+                {
+                  "type": "note",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": null,
+                    "xml_event_index": 4,
+                    "xml_id": "n2",
+                    "source_id": "n2"
+                  },
+                  "xml_event_index": 4,
+                  "offset": 1,
+                  "offset_fraction": "1",
+                  "duration": 1,
+                  "duration_source": {
+                    "quarter_length": 1,
+                    "quarter_length_fraction": "1",
+                    "xml_duration": 2,
+                    "divisions": 2,
+                    "type": "quarter",
+                    "dots": 0
+                  },
+                  "written_type": "quarter",
+                  "dots": 0,
+                  "voice": "1",
+                  "staff": null,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [],
+                  "tuplets": [],
+                  "lyrics": [],
+                  "ties": {
+                    "sound": [],
+                    "notation": []
+                  },
+                  "slurs": [],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "n2"
+                  },
+                  "pitch": {
+                    "step": "D",
+                    "alter": 0,
+                    "octave": 4
+                  },
+                  "step": "D",
+                  "alter": 0,
+                  "octave": 4,
+                  "accidental_details": {
+                    "value": null,
+                    "explicit": false,
+                    "cautionary": false,
+                    "editorial": false,
+                    "attributes": {}
+                  },
+                  "accidental": null,
+                  "normalized_music21": {
+                    "type": "note",
+                    "step": "D",
+                    "alter": 0,
+                    "accidental": null,
+                    "accidental_explicit": null,
+                    "octave": 4,
+                    "duration": 1,
+                    "written_type": "quarter",
+                    "dots": 0,
+                    "offset": 1,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [],
+                    "beams": [],
+                    "lyrics": [],
+                    "ties": [],
+                    "slurs": [],
+                    "articulations": [],
+                    "ornaments": [],
+                    "source_staff": null
+                  }
+                },
+                {
+                  "type": "rest",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": null,
+                    "xml_event_index": 5,
+                    "xml_id": "n3",
+                    "source_id": "n3"
+                  },
+                  "xml_event_index": 5,
+                  "offset": 2,
+                  "offset_fraction": "2",
+                  "duration": 1,
+                  "duration_source": {
+                    "quarter_length": 1,
+                    "quarter_length_fraction": "1",
+                    "xml_duration": 2,
+                    "divisions": 2,
+                    "type": "quarter",
+                    "dots": 0
+                  },
+                  "written_type": "quarter",
+                  "dots": 0,
+                  "voice": "1",
+                  "staff": null,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [],
+                  "tuplets": [],
+                  "lyrics": [],
+                  "ties": {
+                    "sound": [],
+                    "notation": []
+                  },
+                  "slurs": [],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "n3"
+                  },
+                  "rest": {
+                    "measure": false,
+                    "attributes": {}
+                  },
+                  "normalized_music21": {
+                    "type": "rest",
+                    "duration": 1,
+                    "written_type": "quarter",
+                    "dots": 0,
+                    "offset": 2,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [],
+                    "beams": [],
+                    "full_measure": null,
+                    "source_staff": null
+                  }
+                },
+                {
+                  "type": "note",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": null,
+                    "xml_event_index": 6,
+                    "xml_id": "n4",
+                    "source_id": "n4"
+                  },
+                  "xml_event_index": 6,
+                  "offset": 3,
+                  "offset_fraction": "3",
+                  "duration": 1,
+                  "duration_source": {
+                    "quarter_length": 1,
+                    "quarter_length_fraction": "1",
+                    "xml_duration": 2,
+                    "divisions": 2,
+                    "type": "quarter",
+                    "dots": 0
+                  },
+                  "written_type": "quarter",
+                  "dots": 0,
+                  "voice": "1",
+                  "staff": null,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [],
+                  "tuplets": [],
+                  "lyrics": [],
+                  "ties": {
+                    "sound": [],
+                    "notation": []
+                  },
+                  "slurs": [],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "n4"
+                  },
+                  "pitch": {
+                    "step": "E",
+                    "alter": -1,
+                    "octave": 4
+                  },
+                  "step": "E",
+                  "alter": -1,
+                  "octave": 4,
+                  "accidental_details": {
+                    "value": "flat",
+                    "explicit": true,
+                    "cautionary": false,
+                    "editorial": false,
+                    "attributes": {}
+                  },
+                  "accidental": "flat",
+                  "normalized_music21": {
+                    "type": "note",
+                    "step": "E",
+                    "alter": -1,
+                    "accidental": "flat",
+                    "accidental_explicit": true,
+                    "octave": 4,
+                    "duration": 1,
+                    "written_type": "quarter",
+                    "dots": 0,
+                    "offset": 3,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [],
+                    "beams": [],
+                    "lyrics": [],
+                    "ties": [],
+                    "slurs": [],
+                    "articulations": [],
+                    "ornaments": [],
+                    "source_staff": null
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "key_signature",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-2"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": null,
+              "fifths": 0,
+              "mode": "major",
+              "cancel": null,
+              "cancel_attributes": {},
+              "custom": [],
+              "custom_components": [],
+              "attributes": {}
+            },
+            {
+              "type": "time_signature",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-3"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": null,
+              "beats": [
+                "4"
+              ],
+              "beat_types": [
+                "4"
+              ],
+              "symbol": null,
+              "senza_misura": null,
+              "interchangeable": null,
+              "attributes": {}
+            },
+            {
+              "type": "clef",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-4"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": null,
+              "sign": "G",
+              "line": 2,
+              "octave_change": null,
+              "attributes": {}
+            },
+            {
+              "type": "direction",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 2,
+                "xml_id": null,
+                "source_id": "P1-M1-E002"
+              },
+              "xml_event_index": 2,
+              "offset": 0,
+              "offset_fraction": "0",
+              "voice": null,
+              "staff": null,
+              "placement": "above",
+              "direction_types": [
+                {
+                  "type": "words",
+                  "attributes": {},
+                  "text": "Moderato"
+                }
+              ],
+              "tempo": [
+                {
+                  "kind": "sound",
+                  "tempo": 96
+                }
+              ],
+              "sound": {
+                "tempo": "96"
+              },
+              "attributes": {
+                "placement": "above"
+              }
+            }
+          ],
+          "timing_operations": [],
+          "barlines": [
+            {
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 7,
+                "xml_id": null,
+                "source_id": "P1-M1-E007"
+              },
+              "xml_event_index": 7,
+              "location": "right",
+              "bar_style": "light-heavy",
+              "repeat": null,
+              "ending": null,
+              "other_musical_elements": []
+            }
+          ],
+          "unhandled_musicxml": [],
+          "normalized_music21_events": [
+            {
+              "type": "clef",
+              "offset": 0,
+              "sign": "G",
+              "line": 2,
+              "octave_change": 0
+            },
+            {
+              "type": "key_signature",
+              "offset": 0,
+              "sharps": 0,
+              "tonic": "C",
+              "mode": "major"
+            },
+            {
+              "type": "tempo",
+              "offset": 0,
+              "text": null,
+              "bpm": null,
+              "quarter_bpm": 96,
+              "beat_unit": "quarter",
+              "beat_unit_dots": 0
+            },
+            {
+              "type": "text_expression",
+              "text": "Moderato",
+              "offset": 0,
+              "placement": "above"
+            },
+            {
+              "type": "time_signature",
+              "offset": 0,
+              "ratio": "4/4",
+              "numerator": 4,
+              "denominator": 4,
+              "symbol": ""
+            }
+          ],
+          "time_signature": "4/4",
+          "time_signature_details": {
+            "ratio": "4/4",
+            "numerator": 4,
+            "denominator": 4,
+            "symbol": ""
+          },
+          "key_signature": 0,
+          "key": {
+            "sharps": 0,
+            "tonic": "C",
+            "mode": "major"
+          },
+          "clef": {
+            "sign": "G",
+            "line": 2,
+            "octave_change": 0
+          }
+        }
+      ],
+      "name": "Flute",
+      "abbreviation": null,
+      "instrument": {
+        "name": "Flute",
+        "abbreviation": null,
+        "midi_program": null,
+        "midi_channel": null
+      },
+      "source_part": {
+        "id": "P1",
+        "part_name": "Flute",
+        "part_abbreviation": null,
+        "score_instruments": [],
+        "midi_instruments": []
+      }
+    }
+  ],
+  "conversion": {
+    "parser": {
+      "semantic": "music21",
+      "fidelity": "lxml"
+    },
+    "layout_data_omitted": true,
+    "unhandled_tags": [],
+    "semantically_lossless": true,
+    "lossy_conditions": [],
+    "warnings": [],
+    "statistics": {
+      "parts": 1,
+      "measures": 1,
+      "notes": 3,
+      "rests": 1,
+      "chords": 0,
+      "voices": 1,
+      "staff_assignments": 0,
+      "lyrics": 0,
+      "lyric_extensions": 0,
+      "ties": 0,
+      "tied_notations": 0,
+      "slurs": 0,
+      "tuplets": 0,
+      "grace_notes": 0,
+      "beams": 0,
+      "articulations": 0,
+      "ornaments": 0,
+      "directions": 1,
+      "unhandled_musical_elements": 0,
+      "reconciliation_warnings": 0
+    }
+  }
+}

@@ -1,0 +1,1299 @@
+{
+  "schema_version": "1.0.0",
+  "generator": {
+    "name": "musicxml-json-interchange",
+    "version": "1.0.0"
+  },
+  "title": "V3 Fidelity 测试",
+  "metadata": {
+    "title": "V3 Fidelity 测试",
+    "composer": "测试者",
+    "composers": [
+      "测试者"
+    ],
+    "lyricist": null,
+    "lyricists": [],
+    "movement_title": "rich_notation.musicxml",
+    "movement_number": null,
+    "copyright": null,
+    "source": {
+      "work_number": null,
+      "work_title": "V3 Fidelity 测试",
+      "movement_number": null,
+      "movement_title": null,
+      "creators": [
+        {
+          "type": "composer",
+          "text": "测试者"
+        }
+      ],
+      "rights": []
+    }
+  },
+  "parts": [
+    {
+      "id": "P1",
+      "measures": [
+        {
+          "number": "1",
+          "implicit": false,
+          "width_ignored": false,
+          "divisions": 4,
+          "duration": 1,
+          "duration_fraction": "1",
+          "voices": [
+            {
+              "id": "1",
+              "events": [
+                {
+                  "type": "note",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": 1,
+                    "xml_event_index": 3,
+                    "xml_id": "N1",
+                    "source_id": "N1"
+                  },
+                  "xml_event_index": 3,
+                  "offset": 0,
+                  "offset_fraction": "0",
+                  "duration": 0,
+                  "duration_source": {
+                    "quarter_length": 0,
+                    "quarter_length_fraction": "0",
+                    "xml_duration": null,
+                    "divisions": 4,
+                    "type": null,
+                    "dots": 0
+                  },
+                  "written_type": null,
+                  "dots": 0,
+                  "voice": "1",
+                  "staff": 1,
+                  "grace": true,
+                  "grace_info": {
+                    "present": true,
+                    "slash": true,
+                    "steal_time_previous": null,
+                    "steal_time_following": 10,
+                    "make_time": null,
+                    "attributes": {
+                      "slash": "yes",
+                      "steal-time-following": "10"
+                    }
+                  },
+                  "beams": [],
+                  "tuplets": [],
+                  "lyrics": [],
+                  "ties": {
+                    "sound": [],
+                    "notation": []
+                  },
+                  "slurs": [],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "N1"
+                  },
+                  "pitch": {
+                    "step": "F",
+                    "alter": 1,
+                    "octave": 4
+                  },
+                  "step": "F",
+                  "alter": 1,
+                  "octave": 4,
+                  "accidental_details": {
+                    "value": null,
+                    "explicit": false,
+                    "cautionary": false,
+                    "editorial": false,
+                    "attributes": {}
+                  },
+                  "accidental": null,
+                  "normalized_music21": {
+                    "type": "note",
+                    "step": "F",
+                    "alter": 1,
+                    "accidental": "sharp",
+                    "accidental_explicit": false,
+                    "octave": 4,
+                    "duration": 0,
+                    "written_type": "eighth",
+                    "dots": 0,
+                    "offset": 0,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": true,
+                    "grace_slash": true,
+                    "tuplets": [],
+                    "beams": [],
+                    "lyrics": [],
+                    "ties": [],
+                    "slurs": [],
+                    "articulations": [],
+                    "ornaments": [],
+                    "source_staff": 1
+                  }
+                },
+                {
+                  "type": "chord",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": 1,
+                    "xml_event_index": 4,
+                    "xml_id": "N2",
+                    "source_id": "N2"
+                  },
+                  "xml_event_index": 4,
+                  "offset": 0,
+                  "offset_fraction": "0",
+                  "duration": 0.5,
+                  "duration_source": {
+                    "quarter_length": 0.5,
+                    "quarter_length_fraction": "1/2",
+                    "xml_duration": 2,
+                    "divisions": 4,
+                    "type": "eighth",
+                    "dots": 1
+                  },
+                  "written_type": "eighth",
+                  "dots": 1,
+                  "voice": "1",
+                  "staff": 1,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [
+                    {
+                      "number": "1",
+                      "value": "begin",
+                      "attributes": {
+                        "number": "1"
+                      }
+                    }
+                  ],
+                  "tuplets": [
+                    {
+                      "actual_notes": 3,
+                      "normal_notes": 2,
+                      "normal_type": "eighth",
+                      "normal_dots": 1,
+                      "type": "start",
+                      "number": "1",
+                      "bracket": "yes",
+                      "show_number": "both",
+                      "show_type": null,
+                      "attributes": {
+                        "type": "start",
+                        "number": "1",
+                        "bracket": "yes",
+                        "show-number": "both"
+                      }
+                    }
+                  ],
+                  "xml_attributes": {
+                    "id": "N2"
+                  },
+                  "notes": [
+                    {
+                      "source_ref": {
+                        "part_id": "P1",
+                        "measure_number": "1",
+                        "measure_index": 1,
+                        "voice": "1",
+                        "staff": 1,
+                        "xml_event_index": 4,
+                        "xml_id": "N2",
+                        "source_id": "N2"
+                      },
+                      "duration": 0.5,
+                      "duration_source": {
+                        "quarter_length": 0.5,
+                        "quarter_length_fraction": "1/2",
+                        "xml_duration": 2,
+                        "divisions": 4,
+                        "type": "eighth",
+                        "dots": 1
+                      },
+                      "written_type": "eighth",
+                      "dots": 1,
+                      "voice": "1",
+                      "staff": 1,
+                      "grace": false,
+                      "grace_info": {
+                        "present": false,
+                        "slash": null,
+                        "steal_time_previous": null,
+                        "steal_time_following": null,
+                        "make_time": null
+                      },
+                      "beams": [
+                        {
+                          "number": "1",
+                          "value": "begin",
+                          "attributes": {
+                            "number": "1"
+                          }
+                        }
+                      ],
+                      "tuplets": [
+                        {
+                          "actual_notes": 3,
+                          "normal_notes": 2,
+                          "normal_type": "eighth",
+                          "normal_dots": 1,
+                          "type": "start",
+                          "number": "1",
+                          "bracket": "yes",
+                          "show_number": "both",
+                          "show_type": null,
+                          "attributes": {
+                            "type": "start",
+                            "number": "1",
+                            "bracket": "yes",
+                            "show-number": "both"
+                          }
+                        }
+                      ],
+                      "lyrics": [
+                        {
+                          "number": "1",
+                          "name": "main",
+                          "syllabic": "begin",
+                          "text": "你好",
+                          "texts": [
+                            "你",
+                            "好"
+                          ],
+                          "elisions": [
+                            {
+                              "text": "‿",
+                              "attributes": {}
+                            }
+                          ],
+                          "extend": {
+                            "present": true,
+                            "type": "start"
+                          },
+                          "humming": false,
+                          "laughing": false,
+                          "end_line": false,
+                          "end_paragraph": false,
+                          "attributes": {
+                            "number": "1",
+                            "name": "main"
+                          }
+                        }
+                      ],
+                      "ties": {
+                        "sound": [
+                          {
+                            "type": "start"
+                          }
+                        ],
+                        "notation": [
+                          {
+                            "type": "start",
+                            "number": "1"
+                          }
+                        ]
+                      },
+                      "slurs": [
+                        {
+                          "type": "start",
+                          "number": "1"
+                        },
+                        {
+                          "type": "start",
+                          "number": "2"
+                        }
+                      ],
+                      "articulations": [
+                        {
+                          "type": "staccato",
+                          "attributes": {},
+                          "text": null
+                        },
+                        {
+                          "type": "scoop",
+                          "attributes": {},
+                          "text": null
+                        }
+                      ],
+                      "ornaments": [
+                        {
+                          "type": "trill-mark",
+                          "attributes": {},
+                          "text": null,
+                          "raw_xml": "<trill-mark/>"
+                        },
+                        {
+                          "type": "wavy-line",
+                          "attributes": {
+                            "type": "start",
+                            "number": "1"
+                          },
+                          "text": null,
+                          "raw_xml": "<wavy-line type=\"start\" number=\"1\"/>"
+                        },
+                        {
+                          "type": "accidental-mark",
+                          "attributes": {},
+                          "text": "sharp",
+                          "raw_xml": "<accidental-mark>sharp</accidental-mark>"
+                        }
+                      ],
+                      "unhandled_notations": [
+                        {
+                          "path": "note/notations/technical",
+                          "tag": "technical",
+                          "attributes": {},
+                          "text": null,
+                          "raw_xml": "<technical><string>2</string><fret>3</fret></technical>"
+                        }
+                      ],
+                      "pitch": {
+                        "step": "F",
+                        "alter": 0,
+                        "octave": 4
+                      },
+                      "step": "F",
+                      "alter": 0,
+                      "octave": 4,
+                      "accidental_details": {
+                        "value": "natural",
+                        "explicit": true,
+                        "cautionary": true,
+                        "editorial": false,
+                        "attributes": {
+                          "cautionary": "yes",
+                          "editorial": "no"
+                        }
+                      },
+                      "accidental": "natural"
+                    },
+                    {
+                      "source_ref": {
+                        "part_id": "P1",
+                        "measure_number": "1",
+                        "measure_index": 1,
+                        "voice": "1",
+                        "staff": 1,
+                        "xml_event_index": 5,
+                        "xml_id": "N3",
+                        "source_id": "N3"
+                      },
+                      "duration": 0.5,
+                      "duration_source": {
+                        "quarter_length": 0.5,
+                        "quarter_length_fraction": "1/2",
+                        "xml_duration": 2,
+                        "divisions": 4,
+                        "type": "eighth",
+                        "dots": 0
+                      },
+                      "written_type": "eighth",
+                      "dots": 0,
+                      "voice": "1",
+                      "staff": 1,
+                      "grace": false,
+                      "grace_info": {
+                        "present": false,
+                        "slash": null,
+                        "steal_time_previous": null,
+                        "steal_time_following": null,
+                        "make_time": null
+                      },
+                      "beams": [],
+                      "tuplets": [
+                        {
+                          "actual_notes": 3,
+                          "normal_notes": 2,
+                          "normal_type": "eighth",
+                          "normal_dots": 0,
+                          "type": null,
+                          "number": null,
+                          "bracket": null,
+                          "show_number": null,
+                          "show_type": null,
+                          "attributes": {}
+                        }
+                      ],
+                      "lyrics": [],
+                      "ties": {
+                        "sound": [],
+                        "notation": []
+                      },
+                      "slurs": [
+                        {
+                          "type": "continue",
+                          "number": "2"
+                        }
+                      ],
+                      "articulations": [],
+                      "ornaments": [],
+                      "unhandled_notations": [],
+                      "pitch": {
+                        "step": "A",
+                        "alter": 0,
+                        "octave": 4
+                      },
+                      "step": "A",
+                      "alter": 0,
+                      "octave": 4,
+                      "accidental_details": {
+                        "value": null,
+                        "explicit": false,
+                        "cautionary": false,
+                        "editorial": false,
+                        "attributes": {}
+                      },
+                      "accidental": null
+                    }
+                  ],
+                  "source_refs": [
+                    {
+                      "part_id": "P1",
+                      "measure_number": "1",
+                      "measure_index": 1,
+                      "voice": "1",
+                      "staff": 1,
+                      "xml_event_index": 4,
+                      "xml_id": "N2",
+                      "source_id": "N2"
+                    },
+                    {
+                      "part_id": "P1",
+                      "measure_number": "1",
+                      "measure_index": 1,
+                      "voice": "1",
+                      "staff": 1,
+                      "xml_event_index": 5,
+                      "xml_id": "N3",
+                      "source_id": "N3"
+                    }
+                  ],
+                  "normalized_music21": {
+                    "type": "chord",
+                    "duration": 0.5,
+                    "written_type": "eighth",
+                    "dots": 1,
+                    "offset": 0,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [
+                      {
+                        "actual_notes": 3,
+                        "normal_notes": 2,
+                        "type": "start",
+                        "id": 0,
+                        "nested_level": 1,
+                        "actual_note_type": "eighth",
+                        "normal_note_type": "eighth",
+                        "bracket": true,
+                        "placement": null
+                      }
+                    ],
+                    "beams": [
+                      {
+                        "number": 1,
+                        "type": "start",
+                        "direction": null
+                      }
+                    ],
+                    "notes": [
+                      {
+                        "step": "F",
+                        "alter": 0,
+                        "accidental": "natural",
+                        "accidental_explicit": true,
+                        "octave": 4,
+                        "ties": [
+                          {
+                            "type": "start"
+                          }
+                        ],
+                        "lyrics": [],
+                        "slurs": []
+                      },
+                      {
+                        "step": "A",
+                        "alter": 0,
+                        "accidental": null,
+                        "accidental_explicit": null,
+                        "octave": 4,
+                        "ties": [],
+                        "lyrics": [],
+                        "slurs": []
+                      }
+                    ],
+                    "lyrics": [
+                      {
+                        "number": "main",
+                        "text": "你 好",
+                        "syllabic": "composite",
+                        "extend": null,
+                        "components": [
+                          {
+                            "text": "你",
+                            "syllabic": "begin",
+                            "elision_before": " "
+                          },
+                          {
+                            "text": "好",
+                            "syllabic": null,
+                            "elision_before": " "
+                          }
+                        ]
+                      }
+                    ],
+                    "ties": [
+                      {
+                        "type": "start"
+                      }
+                    ],
+                    "slurs": [
+                      {
+                        "type": "start",
+                        "number": "1"
+                      },
+                      {
+                        "type": "start",
+                        "number": "2"
+                      }
+                    ],
+                    "articulations": [
+                      "string-indication",
+                      "fret-indication",
+                      "staccato",
+                      "scoop"
+                    ],
+                    "ornaments": [
+                      {
+                        "type": "trill"
+                      }
+                    ],
+                    "source_staff": 1
+                  }
+                },
+                {
+                  "type": "note",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "1",
+                    "staff": 1,
+                    "xml_event_index": 6,
+                    "xml_id": "N4",
+                    "source_id": "N4"
+                  },
+                  "xml_event_index": 6,
+                  "offset": 0.5,
+                  "offset_fraction": "1/2",
+                  "duration": 0.5,
+                  "duration_source": {
+                    "quarter_length": 0.5,
+                    "quarter_length_fraction": "1/2",
+                    "xml_duration": 2,
+                    "divisions": 4,
+                    "type": "eighth",
+                    "dots": 0
+                  },
+                  "written_type": "eighth",
+                  "dots": 0,
+                  "voice": "1",
+                  "staff": 1,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [
+                    {
+                      "number": "1",
+                      "value": "end",
+                      "attributes": {
+                        "number": "1"
+                      }
+                    }
+                  ],
+                  "tuplets": [
+                    {
+                      "actual_notes": 3,
+                      "normal_notes": 2,
+                      "normal_type": "eighth",
+                      "normal_dots": 0,
+                      "type": "stop",
+                      "number": "1",
+                      "bracket": null,
+                      "show_number": null,
+                      "show_type": null,
+                      "attributes": {
+                        "type": "stop",
+                        "number": "1"
+                      }
+                    }
+                  ],
+                  "lyrics": [
+                    {
+                      "number": "1",
+                      "name": null,
+                      "syllabic": "end",
+                      "text": "啊",
+                      "texts": [
+                        "啊"
+                      ],
+                      "elisions": [],
+                      "extend": {
+                        "present": true,
+                        "type": "stop"
+                      },
+                      "humming": false,
+                      "laughing": false,
+                      "end_line": false,
+                      "end_paragraph": false,
+                      "attributes": {
+                        "number": "1"
+                      }
+                    }
+                  ],
+                  "ties": {
+                    "sound": [
+                      {
+                        "type": "stop"
+                      }
+                    ],
+                    "notation": [
+                      {
+                        "type": "stop",
+                        "number": "1"
+                      }
+                    ]
+                  },
+                  "slurs": [
+                    {
+                      "type": "stop",
+                      "number": "1"
+                    },
+                    {
+                      "type": "stop",
+                      "number": "2"
+                    }
+                  ],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "N4"
+                  },
+                  "pitch": {
+                    "step": "F",
+                    "alter": 0,
+                    "octave": 4
+                  },
+                  "step": "F",
+                  "alter": 0,
+                  "octave": 4,
+                  "accidental_details": {
+                    "value": null,
+                    "explicit": false,
+                    "cautionary": false,
+                    "editorial": false,
+                    "attributes": {}
+                  },
+                  "accidental": null,
+                  "normalized_music21": {
+                    "type": "note",
+                    "step": "F",
+                    "alter": 0,
+                    "accidental": null,
+                    "accidental_explicit": null,
+                    "octave": 4,
+                    "duration": 0.5,
+                    "written_type": "eighth",
+                    "dots": 0,
+                    "offset": 0.5,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [
+                      {
+                        "actual_notes": 3,
+                        "normal_notes": 2,
+                        "type": "stop",
+                        "id": 0,
+                        "nested_level": 1,
+                        "actual_note_type": "eighth",
+                        "normal_note_type": "eighth",
+                        "bracket": true,
+                        "placement": null
+                      }
+                    ],
+                    "beams": [
+                      {
+                        "number": 1,
+                        "type": "stop",
+                        "direction": null
+                      }
+                    ],
+                    "lyrics": [
+                      {
+                        "number": "1",
+                        "text": "啊",
+                        "syllabic": "end",
+                        "extend": null
+                      }
+                    ],
+                    "ties": [
+                      {
+                        "type": "stop"
+                      }
+                    ],
+                    "slurs": [
+                      {
+                        "type": "stop",
+                        "number": "1"
+                      },
+                      {
+                        "type": "stop",
+                        "number": "2"
+                      }
+                    ],
+                    "articulations": [],
+                    "ornaments": [],
+                    "source_staff": 1
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "events": [
+                {
+                  "type": "rest",
+                  "source_ref": {
+                    "part_id": "P1",
+                    "measure_number": "1",
+                    "measure_index": 1,
+                    "voice": "2",
+                    "staff": 2,
+                    "xml_event_index": 8,
+                    "xml_id": "N5",
+                    "source_id": "N5"
+                  },
+                  "xml_event_index": 8,
+                  "offset": 0,
+                  "offset_fraction": "0",
+                  "duration": 1,
+                  "duration_source": {
+                    "quarter_length": 1,
+                    "quarter_length_fraction": "1",
+                    "xml_duration": 4,
+                    "divisions": 4,
+                    "type": "quarter",
+                    "dots": 0
+                  },
+                  "written_type": "quarter",
+                  "dots": 0,
+                  "voice": "2",
+                  "staff": 2,
+                  "grace": false,
+                  "grace_info": {
+                    "present": false,
+                    "slash": null,
+                    "steal_time_previous": null,
+                    "steal_time_following": null,
+                    "make_time": null
+                  },
+                  "beams": [],
+                  "tuplets": [],
+                  "lyrics": [],
+                  "ties": {
+                    "sound": [],
+                    "notation": []
+                  },
+                  "slurs": [],
+                  "articulations": [],
+                  "ornaments": [],
+                  "unhandled_notations": [],
+                  "xml_attributes": {
+                    "id": "N5"
+                  },
+                  "rest": {
+                    "measure": false,
+                    "attributes": {}
+                  },
+                  "normalized_music21": {
+                    "type": "rest",
+                    "duration": 1,
+                    "written_type": "quarter",
+                    "dots": 0,
+                    "offset": 0,
+                    "voice": "1",
+                    "staff": null,
+                    "grace": false,
+                    "tuplets": [],
+                    "beams": [],
+                    "full_measure": null,
+                    "source_staff": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "key_signature",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": 1,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-3"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": 1,
+              "fifths": 0,
+              "mode": "major",
+              "cancel": null,
+              "cancel_attributes": {},
+              "custom": [],
+              "custom_components": [],
+              "attributes": {
+                "number": "1"
+              }
+            },
+            {
+              "type": "time_signature",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": 1,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-4"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": 1,
+              "beats": [
+                "3+2"
+              ],
+              "beat_types": [
+                "8"
+              ],
+              "symbol": "common",
+              "senza_misura": null,
+              "interchangeable": null,
+              "attributes": {
+                "number": "1",
+                "symbol": "common"
+              }
+            },
+            {
+              "type": "clef",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": 1,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-5"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": 1,
+              "sign": "G",
+              "line": 2,
+              "octave_change": null,
+              "attributes": {
+                "number": "1"
+              }
+            },
+            {
+              "type": "clef",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": 2,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-6"
+              },
+              "xml_event_index": 1,
+              "offset": 0,
+              "staff": 2,
+              "sign": "F",
+              "line": 4,
+              "octave_change": -1,
+              "attributes": {
+                "number": "2"
+              }
+            },
+            {
+              "type": "direction",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": "1",
+                "staff": 1,
+                "xml_event_index": 2,
+                "xml_id": null,
+                "source_id": "P1-M1-E002"
+              },
+              "xml_event_index": 2,
+              "offset": 0,
+              "offset_fraction": "0",
+              "voice": "1",
+              "staff": 1,
+              "placement": "above",
+              "direction_types": [
+                {
+                  "type": "rehearsal",
+                  "attributes": {},
+                  "text": "A"
+                },
+                {
+                  "type": "words",
+                  "attributes": {},
+                  "text": "Allegro"
+                },
+                {
+                  "type": "metronome",
+                  "attributes": {},
+                  "text": null,
+                  "kind": "metronome",
+                  "beat_unit": "quarter",
+                  "beat_unit_dots": 1,
+                  "per_minute": "96",
+                  "raw_xml": "<metronome><beat-unit>quarter</beat-unit><beat-unit-dot/><per-minute>96</per-minute></metronome>"
+                },
+                {
+                  "type": "wedge",
+                  "attributes": {
+                    "type": "crescendo",
+                    "number": "1"
+                  },
+                  "text": null
+                }
+              ],
+              "tempo": [
+                {
+                  "kind": "metronome",
+                  "beat_unit": "quarter",
+                  "beat_unit_dots": 1,
+                  "per_minute": "96",
+                  "attributes": {},
+                  "raw_xml": "<metronome><beat-unit>quarter</beat-unit><beat-unit-dot/><per-minute>96</per-minute></metronome>"
+                },
+                {
+                  "kind": "sound",
+                  "tempo": 144
+                }
+              ],
+              "sound": {
+                "tempo": "144"
+              },
+              "attributes": {
+                "placement": "above"
+              }
+            },
+            {
+              "type": "direction",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": "2",
+                "staff": 2,
+                "xml_event_index": 9,
+                "xml_id": null,
+                "source_id": "P1-M1-E009"
+              },
+              "xml_event_index": 9,
+              "offset": 1,
+              "offset_fraction": "1",
+              "voice": "2",
+              "staff": 2,
+              "placement": "below",
+              "direction_types": [
+                {
+                  "type": "dynamics",
+                  "attributes": {},
+                  "text": null,
+                  "values": [
+                    "sfz"
+                  ]
+                },
+                {
+                  "type": "pedal",
+                  "attributes": {
+                    "type": "start",
+                    "line": "yes"
+                  },
+                  "text": null
+                },
+                {
+                  "type": "octave-shift",
+                  "attributes": {
+                    "type": "down",
+                    "size": "8",
+                    "number": "1"
+                  },
+                  "text": null
+                },
+                {
+                  "type": "segno",
+                  "attributes": {},
+                  "text": null
+                },
+                {
+                  "type": "coda",
+                  "attributes": {},
+                  "text": null
+                }
+              ],
+              "tempo": [],
+              "sound": null,
+              "attributes": {
+                "placement": "below"
+              }
+            }
+          ],
+          "timing_operations": [
+            {
+              "type": "backup",
+              "xml_event_index": 7,
+              "xml_duration": 4,
+              "divisions": 4,
+              "quarter_length": 1,
+              "resulting_offset": 0,
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 7,
+                "xml_id": null,
+                "source_id": "P1-M1-E007"
+              }
+            }
+          ],
+          "barlines": [
+            {
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 10,
+                "xml_id": null,
+                "source_id": "P1-M1-E010"
+              },
+              "xml_event_index": 10,
+              "location": "right",
+              "bar_style": "light-heavy",
+              "repeat": {
+                "direction": "backward",
+                "times": 3,
+                "winged": "double-curved",
+                "attributes": {
+                  "direction": "backward",
+                  "times": "3",
+                  "winged": "double-curved"
+                }
+              },
+              "ending": {
+                "number": "1, 2",
+                "type": "discontinue",
+                "text": "1–2",
+                "attributes": {
+                  "number": "1, 2",
+                  "type": "discontinue"
+                }
+              },
+              "other_musical_elements": []
+            }
+          ],
+          "unhandled_musicxml": [
+            {
+              "path": "attributes/staves",
+              "tag": "staves",
+              "attributes": {},
+              "text": "2",
+              "raw_xml": "<staves>2</staves>",
+              "source_ref": {
+                "part_id": "P1",
+                "measure_number": "1",
+                "measure_index": 1,
+                "voice": null,
+                "staff": null,
+                "xml_event_index": 1,
+                "xml_id": null,
+                "source_id": "P1-M1-E001-2"
+              },
+              "offset": 0
+            }
+          ],
+          "normalized_music21_events": [
+            {
+              "type": "clef",
+              "offset": 0,
+              "sign": "G",
+              "line": 2,
+              "octave_change": 0
+            },
+            {
+              "type": "key_signature",
+              "offset": 0,
+              "sharps": 0,
+              "tonic": "C",
+              "mode": "major"
+            },
+            {
+              "type": "rehearsal_mark",
+              "text": "A",
+              "offset": 0
+            },
+            {
+              "type": "tempo",
+              "offset": 0,
+              "text": null,
+              "bpm": 96,
+              "quarter_bpm": 144,
+              "beat_unit": "quarter",
+              "beat_unit_dots": 1
+            },
+            {
+              "type": "text_expression",
+              "text": "Allegro",
+              "offset": 0,
+              "placement": "above"
+            },
+            {
+              "type": "time_signature",
+              "offset": 0,
+              "ratio": "3/8+2/8",
+              "numerator": 5,
+              "denominator": 8,
+              "symbol": "common"
+            },
+            {
+              "type": "clef",
+              "offset": 0,
+              "sign": "F",
+              "line": 4,
+              "octave_change": -1
+            },
+            {
+              "type": "dynamic",
+              "value": "sfz",
+              "offset": 1,
+              "placement": "below"
+            }
+          ],
+          "time_signature": "3/8+2/8",
+          "time_signature_details": {
+            "ratio": "3/8+2/8",
+            "numerator": 5,
+            "denominator": 8,
+            "symbol": "common"
+          },
+          "key_signature": 0,
+          "key": {
+            "sharps": 0,
+            "tonic": "C",
+            "mode": "major"
+          },
+          "clef": {
+            "sign": "G",
+            "line": 2,
+            "octave_change": 0
+          }
+        }
+      ],
+      "name": "Piano",
+      "abbreviation": null,
+      "instrument": {
+        "name": "Piano",
+        "abbreviation": null,
+        "midi_program": null,
+        "midi_channel": null
+      },
+      "source_part": {
+        "id": "P1",
+        "part_name": "Piano",
+        "part_abbreviation": null,
+        "score_instruments": [],
+        "midi_instruments": []
+      }
+    }
+  ],
+  "conversion": {
+    "parser": {
+      "semantic": "music21",
+      "fidelity": "lxml"
+    },
+    "layout_data_omitted": true,
+    "unhandled_tags": [
+      "attributes/staves",
+      "note/notations/technical"
+    ],
+    "semantically_lossless": true,
+    "lossy_conditions": [],
+    "warnings": [],
+    "statistics": {
+      "parts": 1,
+      "measures": 1,
+      "notes": 2,
+      "rests": 1,
+      "chords": 1,
+      "voices": 2,
+      "staff_assignments": 7,
+      "lyrics": 2,
+      "lyric_extensions": 2,
+      "ties": 2,
+      "tied_notations": 2,
+      "slurs": 5,
+      "tuplets": 3,
+      "grace_notes": 1,
+      "beams": 2,
+      "articulations": 2,
+      "ornaments": 3,
+      "directions": 2,
+      "unhandled_musical_elements": 2,
+      "reconciliation_warnings": 0
+    }
+  }
+}

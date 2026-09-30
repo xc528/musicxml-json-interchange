@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "musicxml-json-interchange"
+version = "1.0.0"
+description = "Semantic MusicXML ↔ JSON interchange and round-trip validation"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = []
+dependencies = [
+  "lxml>=5,<7",
+  "music21>=9,<11",
+  "jsonschema>=4.21,<5",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+musicxml-to-json = "musicxml_json.musicxml_to_json:main"
+json-to-musicxml = "musicxml_json.json_to_musicxml:main"
+compare-musicxml-semantics = "musicxml_json.compare_semantics:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+musicxml_json = ["resources/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

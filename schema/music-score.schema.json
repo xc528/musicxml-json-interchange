@@ -1,0 +1,643 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:musicxml-json-interchange:schema:music-score:1.0.0",
+  "title": "Music Score JSON",
+  "description": "A reconstruction-oriented semantic representation of a MusicXML score.",
+  "type": "object",
+  "required": ["schema_version", "generator", "title", "metadata", "parts", "conversion"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "generator": {"$ref": "#/$defs/generator"},
+    "title": {"type": ["string", "null"]},
+    "metadata": {"$ref": "#/$defs/metadata"},
+    "parts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/part"}
+    },
+    "conversion": {"$ref": "#/$defs/conversion"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "identifier": {"type": "string", "minLength": 1},
+    "nullableString": {"type": ["string", "null"]},
+    "staff": {"type": ["integer", "null"], "minimum": 1},
+    "nonnegativeNumber": {"type": "number", "minimum": 0},
+    "fractionString": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "xmlAttributes": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "generator": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"const": "musicxml-json-interchange"},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "title", "composer", "composers", "lyricist", "lyricists",
+        "movement_title", "movement_number", "copyright", "source"
+      ],
+      "properties": {
+        "title": {"$ref": "#/$defs/nullableString"},
+        "composer": {"$ref": "#/$defs/nullableString"},
+        "composers": {"type": "array", "items": {"type": "string"}},
+        "lyricist": {"$ref": "#/$defs/nullableString"},
+        "lyricists": {"type": "array", "items": {"type": "string"}},
+        "movement_title": {"$ref": "#/$defs/nullableString"},
+        "movement_number": {"$ref": "#/$defs/nullableString"},
+        "copyright": {"$ref": "#/$defs/nullableString"},
+        "source": {"$ref": "#/$defs/sourceMetadata"}
+      },
+      "additionalProperties": false
+    },
+    "sourceMetadata": {
+      "type": "object",
+      "required": [
+        "work_number", "work_title", "movement_number", "movement_title",
+        "creators", "rights"
+      ],
+      "properties": {
+        "work_number": {"$ref": "#/$defs/nullableString"},
+        "work_title": {"$ref": "#/$defs/nullableString"},
+        "movement_number": {"$ref": "#/$defs/nullableString"},
+        "movement_title": {"$ref": "#/$defs/nullableString"},
+        "creators": {"type": "array", "items": {"$ref": "#/$defs/namedText"}},
+        "rights": {"type": "array", "items": {"$ref": "#/$defs/namedText"}}
+      },
+      "additionalProperties": false
+    },
+    "namedText": {
+      "type": "object",
+      "required": ["type", "text"],
+      "properties": {
+        "type": {"$ref": "#/$defs/nullableString"},
+        "text": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "part": {
+      "type": "object",
+      "required": ["id", "name", "abbreviation", "instrument", "measures", "source_part"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "name": {"type": "string"},
+        "abbreviation": {"$ref": "#/$defs/nullableString"},
+        "instrument": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/instrument"}]},
+        "source_part": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sourcePart"}]},
+        "measures": {"type": "array", "items": {"$ref": "#/$defs/measure"}}
+      },
+      "additionalProperties": false
+    },
+    "instrument": {
+      "type": "object",
+      "required": ["name", "abbreviation", "midi_program", "midi_channel"],
+      "properties": {
+        "name": {"$ref": "#/$defs/nullableString"},
+        "abbreviation": {"$ref": "#/$defs/nullableString"},
+        "midi_program": {"type": ["integer", "null"], "minimum": 0},
+        "midi_channel": {"type": ["integer", "null"], "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "sourcePart": {
+      "type": "object",
+      "required": ["id", "part_name", "part_abbreviation", "score_instruments", "midi_instruments"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "part_name": {"$ref": "#/$defs/nullableString"},
+        "part_abbreviation": {"$ref": "#/$defs/nullableString"},
+        "score_instruments": {"type": "array", "items": {"type": "object"}},
+        "midi_instruments": {"type": "array", "items": {"type": "object"}}
+      },
+      "additionalProperties": true
+    },
+    "measure": {
+      "type": "object",
+      "required": [
+        "number", "implicit", "width_ignored", "divisions", "duration",
+        "duration_fraction", "voices", "events", "timing_operations",
+        "barlines", "unhandled_musicxml", "normalized_music21_events",
+        "time_signature", "time_signature_details", "key_signature", "key", "clef"
+      ],
+      "properties": {
+        "number": {"$ref": "#/$defs/identifier"},
+        "implicit": {"type": "boolean"},
+        "width_ignored": {"type": "boolean"},
+        "divisions": {"type": "integer", "minimum": 1},
+        "duration": {"$ref": "#/$defs/nonnegativeNumber"},
+        "duration_fraction": {"$ref": "#/$defs/fractionString"},
+        "voices": {"type": "array", "items": {"$ref": "#/$defs/voice"}},
+        "events": {"type": "array", "items": {"$ref": "#/$defs/measureEvent"}},
+        "timing_operations": {"type": "array", "items": {"$ref": "#/$defs/timingOperation"}},
+        "barlines": {"type": "array", "items": {"$ref": "#/$defs/barline"}},
+        "unhandled_musicxml": {"type": "array", "items": {"$ref": "#/$defs/fallback"}},
+        "normalized_music21_events": {"type": "array", "items": {"type": "object"}},
+        "time_signature": {"$ref": "#/$defs/nullableString"},
+        "time_signature_details": {"type": ["object", "null"]},
+        "key_signature": {"type": ["integer", "null"]},
+        "key": {"type": ["object", "null"]},
+        "clef": {"type": ["object", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "voice": {
+      "type": "object",
+      "required": ["id", "events"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "events": {"type": "array", "items": {"$ref": "#/$defs/musicalEvent"}}
+      },
+      "additionalProperties": false
+    },
+    "eventBase": {
+      "type": "object",
+      "required": [
+        "type", "source_ref", "xml_event_index", "offset", "offset_fraction",
+        "duration", "duration_source", "written_type", "dots", "voice",
+        "staff", "grace", "grace_info", "beams", "tuplets"
+      ],
+      "properties": {
+        "type": {"enum": ["note", "rest", "chord"]},
+        "source_ref": {"$ref": "#/$defs/sourceRef"},
+        "xml_event_index": {"type": "integer", "minimum": 1},
+        "offset": {"type": "number", "minimum": 0},
+        "offset_fraction": {"$ref": "#/$defs/fractionString"},
+        "duration": {"$ref": "#/$defs/nonnegativeNumber"},
+        "duration_source": {"$ref": "#/$defs/durationSource"},
+        "written_type": {"$ref": "#/$defs/nullableString"},
+        "dots": {"type": "integer", "minimum": 0},
+        "voice": {"$ref": "#/$defs/identifier"},
+        "staff": {"$ref": "#/$defs/staff"},
+        "grace": {"type": "boolean"},
+        "grace_info": {"$ref": "#/$defs/graceInfo"},
+        "beams": {"type": "array", "items": {"$ref": "#/$defs/beam"}},
+        "tuplets": {"type": "array", "items": {"$ref": "#/$defs/tuplet"}},
+        "normalized_music21": {"type": "object"}
+      }
+    },
+    "musicalEvent": {
+      "oneOf": [
+        {"$ref": "#/$defs/noteEvent"},
+        {"$ref": "#/$defs/restEvent"},
+        {"$ref": "#/$defs/chordEvent"}
+      ]
+    },
+    "noteEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/eventBase"},
+        {
+          "type": "object",
+          "required": [
+            "pitch", "accidental_details", "accidental", "lyrics", "ties",
+            "slurs", "articulations", "ornaments", "unhandled_notations"
+          ],
+          "properties": {
+            "type": {"const": "note"},
+            "pitch": {"$ref": "#/$defs/pitch"},
+            "accidental_details": {"$ref": "#/$defs/accidental"},
+            "accidental": {"$ref": "#/$defs/nullableString"},
+            "step": {"type": "string", "enum": ["A", "B", "C", "D", "E", "F", "G"]},
+            "alter": {"type": "number"},
+            "octave": {"type": "integer"},
+            "lyrics": {"type": "array", "items": {"$ref": "#/$defs/lyric"}},
+            "ties": {"$ref": "#/$defs/ties"},
+            "slurs": {"type": "array", "items": {"$ref": "#/$defs/slur"}},
+            "articulations": {"type": "array", "items": {"$ref": "#/$defs/notationValue"}},
+            "ornaments": {"type": "array", "items": {"$ref": "#/$defs/notationValue"}},
+            "unhandled_notations": {"type": "array", "items": {"$ref": "#/$defs/fallback"}}
+          }
+        }
+      ]
+    },
+    "restEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/eventBase"},
+        {
+          "type": "object",
+          "required": ["rest", "lyrics", "ties", "slurs", "articulations", "ornaments", "unhandled_notations"],
+          "properties": {
+            "type": {"const": "rest"},
+            "rest": {
+              "type": "object",
+              "required": ["measure", "attributes"],
+              "properties": {
+                "measure": {"type": "boolean"},
+                "attributes": {"$ref": "#/$defs/xmlAttributes"}
+              },
+              "additionalProperties": false
+            },
+            "lyrics": {"type": "array"},
+            "ties": {"$ref": "#/$defs/ties"},
+            "slurs": {"type": "array"},
+            "articulations": {"type": "array"},
+            "ornaments": {"type": "array"},
+            "unhandled_notations": {"type": "array", "items": {"$ref": "#/$defs/fallback"}}
+          }
+        }
+      ]
+    },
+    "chordEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/eventBase"},
+        {
+          "type": "object",
+          "required": ["notes", "source_refs"],
+          "properties": {
+            "type": {"const": "chord"},
+            "notes": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/chordMember"}},
+            "source_refs": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/sourceRef"}}
+          }
+        }
+      ]
+    },
+    "chordMember": {
+      "type": "object",
+      "required": [
+        "source_ref", "pitch", "accidental_details", "accidental", "duration",
+        "duration_source", "written_type", "dots", "voice", "staff", "grace",
+        "grace_info", "beams", "tuplets", "lyrics", "ties", "slurs",
+        "articulations", "ornaments", "unhandled_notations"
+      ],
+      "properties": {
+        "source_ref": {"$ref": "#/$defs/sourceRef"},
+        "pitch": {"$ref": "#/$defs/pitch"},
+        "accidental_details": {"$ref": "#/$defs/accidental"},
+        "accidental": {"$ref": "#/$defs/nullableString"},
+        "step": {"type": "string", "enum": ["A", "B", "C", "D", "E", "F", "G"]},
+        "alter": {"type": "number"},
+        "octave": {"type": "integer"},
+        "duration": {"$ref": "#/$defs/nonnegativeNumber"},
+        "duration_source": {"$ref": "#/$defs/durationSource"},
+        "written_type": {"$ref": "#/$defs/nullableString"},
+        "dots": {"type": "integer", "minimum": 0},
+        "voice": {"$ref": "#/$defs/identifier"},
+        "staff": {"$ref": "#/$defs/staff"},
+        "grace": {"type": "boolean"},
+        "grace_info": {"$ref": "#/$defs/graceInfo"},
+        "beams": {"type": "array", "items": {"$ref": "#/$defs/beam"}},
+        "tuplets": {"type": "array", "items": {"$ref": "#/$defs/tuplet"}},
+        "lyrics": {"type": "array", "items": {"$ref": "#/$defs/lyric"}},
+        "ties": {"$ref": "#/$defs/ties"},
+        "slurs": {"type": "array", "items": {"$ref": "#/$defs/slur"}},
+        "articulations": {"type": "array", "items": {"$ref": "#/$defs/notationValue"}},
+        "ornaments": {"type": "array", "items": {"$ref": "#/$defs/notationValue"}},
+        "unhandled_notations": {"type": "array", "items": {"$ref": "#/$defs/fallback"}}
+      },
+      "additionalProperties": true
+    },
+    "sourceRef": {
+      "type": "object",
+      "required": [
+        "part_id", "measure_number", "measure_index", "voice", "staff",
+        "xml_event_index", "xml_id", "source_id"
+      ],
+      "properties": {
+        "part_id": {"$ref": "#/$defs/identifier"},
+        "measure_number": {"$ref": "#/$defs/identifier"},
+        "measure_index": {"type": "integer", "minimum": 1},
+        "voice": {"type": ["string", "null"]},
+        "staff": {"$ref": "#/$defs/staff"},
+        "xml_event_index": {"type": "integer", "minimum": 1},
+        "xml_id": {"type": ["string", "null"]},
+        "source_id": {"$ref": "#/$defs/identifier"}
+      },
+      "additionalProperties": false
+    },
+    "pitch": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["step", "alter", "octave"],
+          "properties": {
+            "step": {"type": "string", "enum": ["A", "B", "C", "D", "E", "F", "G"]},
+            "alter": {"type": "number"},
+            "octave": {"type": "integer"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["unpitched", "display_step", "display_octave"],
+          "properties": {
+            "unpitched": {"const": true},
+            "display_step": {"type": ["string", "null"]},
+            "display_octave": {"type": ["integer", "null"]}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "accidental": {
+      "type": "object",
+      "required": ["value", "explicit", "cautionary", "editorial", "attributes"],
+      "properties": {
+        "value": {"$ref": "#/$defs/nullableString"},
+        "explicit": {"type": "boolean"},
+        "cautionary": {"type": "boolean"},
+        "editorial": {"type": "boolean"},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"}
+      },
+      "additionalProperties": false
+    },
+    "durationSource": {
+      "type": "object",
+      "required": ["quarter_length", "quarter_length_fraction", "xml_duration", "divisions", "type", "dots"],
+      "properties": {
+        "quarter_length": {"$ref": "#/$defs/nonnegativeNumber"},
+        "quarter_length_fraction": {"$ref": "#/$defs/fractionString"},
+        "xml_duration": {"type": ["integer", "null"], "minimum": 0},
+        "divisions": {"type": "integer", "minimum": 1},
+        "type": {"$ref": "#/$defs/nullableString"},
+        "dots": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "graceInfo": {
+      "type": "object",
+      "required": ["present", "slash", "steal_time_previous", "steal_time_following", "make_time"],
+      "properties": {
+        "present": {"type": "boolean"},
+        "slash": {"type": ["boolean", "null"]},
+        "steal_time_previous": {"type": ["number", "null"]},
+        "steal_time_following": {"type": ["number", "null"]},
+        "make_time": {"type": ["number", "null"]},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"}
+      },
+      "additionalProperties": false
+    },
+    "lyric": {
+      "type": "object",
+      "required": [
+        "number", "name", "syllabic", "text", "texts", "elisions", "extend",
+        "humming", "laughing", "end_line", "end_paragraph", "attributes"
+      ],
+      "properties": {
+        "number": {"$ref": "#/$defs/nullableString"},
+        "name": {"$ref": "#/$defs/nullableString"},
+        "syllabic": {"type": ["string", "null"], "enum": ["single", "begin", "middle", "end", null]},
+        "text": {"type": "string"},
+        "texts": {"type": "array", "items": {"type": "string"}},
+        "elisions": {"type": "array", "items": {"$ref": "#/$defs/textAttributes"}},
+        "extend": {
+          "type": "object",
+          "required": ["present", "type"],
+          "properties": {
+            "present": {"type": "boolean"},
+            "type": {"type": ["string", "null"], "enum": ["start", "continue", "stop", null]}
+          },
+          "additionalProperties": false
+        },
+        "humming": {"type": "boolean"},
+        "laughing": {"type": "boolean"},
+        "end_line": {"type": "boolean"},
+        "end_paragraph": {"type": "boolean"},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"}
+      },
+      "additionalProperties": false
+    },
+    "textAttributes": {
+      "type": "object",
+      "required": ["text", "attributes"],
+      "properties": {
+        "text": {"type": "string"},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"}
+      },
+      "additionalProperties": false
+    },
+    "ties": {
+      "type": "object",
+      "required": ["sound", "notation"],
+      "properties": {
+        "sound": {"type": "array", "items": {"$ref": "#/$defs/tieMark"}},
+        "notation": {"type": "array", "items": {"$ref": "#/$defs/tieMark"}}
+      },
+      "additionalProperties": false
+    },
+    "tieMark": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {"type": {"type": "string", "enum": ["start", "stop", "continue"]}},
+      "additionalProperties": {"type": ["string", "number", "boolean", "null"]}
+    },
+    "slur": {
+      "type": "object",
+      "required": ["type", "number"],
+      "properties": {
+        "type": {"type": "string", "enum": ["start", "stop", "continue"]},
+        "number": {"type": ["string", "null"]}
+      },
+      "additionalProperties": {"type": ["string", "number", "boolean", "null"]}
+    },
+    "tuplet": {
+      "type": "object",
+      "required": [
+        "actual_notes", "normal_notes", "normal_type", "normal_dots", "type",
+        "number", "bracket", "show_number", "show_type", "attributes"
+      ],
+      "properties": {
+        "actual_notes": {"type": ["integer", "null"], "minimum": 1},
+        "normal_notes": {"type": ["integer", "null"], "minimum": 1},
+        "normal_type": {"$ref": "#/$defs/nullableString"},
+        "normal_dots": {"type": "integer", "minimum": 0},
+        "type": {"type": ["string", "null"], "enum": ["start", "stop", "continue", null]},
+        "number": {"$ref": "#/$defs/nullableString"},
+        "bracket": {"$ref": "#/$defs/nullableString"},
+        "show_number": {"$ref": "#/$defs/nullableString"},
+        "show_type": {"$ref": "#/$defs/nullableString"},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"}
+      },
+      "additionalProperties": false
+    },
+    "beam": {
+      "type": "object",
+      "required": ["number", "value", "attributes"],
+      "properties": {
+        "number": {"$ref": "#/$defs/identifier"},
+        "value": {"type": "string", "enum": ["begin", "continue", "end", "forward hook", "backward hook"]},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"}
+      },
+      "additionalProperties": false
+    },
+    "notationValue": {
+      "type": "object",
+      "required": ["type", "attributes", "text"],
+      "properties": {
+        "type": {"$ref": "#/$defs/identifier"},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"},
+        "text": {"$ref": "#/$defs/nullableString"},
+        "raw_xml": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "fallback": {
+      "type": "object",
+      "required": ["path", "tag", "attributes", "text", "raw_xml"],
+      "properties": {
+        "path": {"$ref": "#/$defs/identifier"},
+        "tag": {"$ref": "#/$defs/identifier"},
+        "attributes": {"$ref": "#/$defs/xmlAttributes"},
+        "text": {"$ref": "#/$defs/nullableString"},
+        "raw_xml": {"type": "string", "minLength": 1},
+        "source_ref": {"$ref": "#/$defs/sourceRef"},
+        "offset": {"type": "number"},
+        "xml_event_index": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "timingOperation": {
+      "type": "object",
+      "required": ["type", "xml_event_index", "xml_duration", "divisions", "quarter_length", "resulting_offset", "source_ref"],
+      "properties": {
+        "type": {"enum": ["backup", "forward"]},
+        "xml_event_index": {"type": "integer", "minimum": 1},
+        "xml_duration": {"type": "integer", "minimum": 0},
+        "divisions": {"type": "integer", "minimum": 1},
+        "quarter_length": {"$ref": "#/$defs/nonnegativeNumber"},
+        "resulting_offset": {"type": "number"},
+        "source_ref": {"$ref": "#/$defs/sourceRef"}
+      },
+      "additionalProperties": false
+    },
+    "measureEvent": {
+      "oneOf": [
+        {"$ref": "#/$defs/directionEvent"},
+        {"$ref": "#/$defs/keyEvent"},
+        {"$ref": "#/$defs/timeEvent"},
+        {"$ref": "#/$defs/clefEvent"}
+      ]
+    },
+    "measureEventBase": {
+      "type": "object",
+      "required": ["type", "source_ref", "xml_event_index", "offset"],
+      "properties": {
+        "source_ref": {"$ref": "#/$defs/sourceRef"},
+        "xml_event_index": {"type": "integer", "minimum": 1},
+        "offset": {"type": "number"}
+      }
+    },
+    "directionEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/measureEventBase"},
+        {
+          "type": "object",
+          "required": ["type", "offset_fraction", "voice", "staff", "placement", "direction_types", "tempo", "sound", "attributes"],
+          "properties": {
+            "type": {"const": "direction"},
+            "offset_fraction": {"$ref": "#/$defs/fractionString"},
+            "voice": {"type": ["string", "null"]},
+            "staff": {"$ref": "#/$defs/staff"},
+            "placement": {"$ref": "#/$defs/nullableString"},
+            "direction_types": {"type": "array", "items": {"type": "object"}},
+            "tempo": {"type": "array", "items": {"type": "object"}},
+            "sound": {"type": ["object", "null"]},
+            "attributes": {"$ref": "#/$defs/xmlAttributes"}
+          }
+        }
+      ]
+    },
+    "keyEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/measureEventBase"},
+        {
+          "type": "object",
+          "required": ["type", "staff", "fifths", "mode", "cancel", "cancel_attributes", "custom", "custom_components", "attributes"],
+          "properties": {
+            "type": {"const": "key_signature"},
+            "staff": {"$ref": "#/$defs/staff"},
+            "fifths": {"type": ["integer", "null"]},
+            "mode": {"$ref": "#/$defs/nullableString"},
+            "cancel": {"type": ["integer", "null"]},
+            "cancel_attributes": {"$ref": "#/$defs/xmlAttributes"},
+            "custom": {"type": "array", "items": {"type": "object"}},
+            "custom_components": {"type": "array", "items": {"type": "object"}},
+            "attributes": {"$ref": "#/$defs/xmlAttributes"}
+          }
+        }
+      ]
+    },
+    "timeEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/measureEventBase"},
+        {
+          "type": "object",
+          "required": ["type", "staff", "beats", "beat_types", "symbol", "senza_misura", "interchangeable", "attributes"],
+          "properties": {
+            "type": {"const": "time_signature"},
+            "staff": {"$ref": "#/$defs/staff"},
+            "beats": {"type": "array", "items": {"type": "string"}},
+            "beat_types": {"type": "array", "items": {"type": "string"}},
+            "symbol": {"$ref": "#/$defs/nullableString"},
+            "senza_misura": {"$ref": "#/$defs/nullableString"},
+            "interchangeable": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/fallback"}]},
+            "attributes": {"$ref": "#/$defs/xmlAttributes"}
+          }
+        }
+      ]
+    },
+    "clefEvent": {
+      "allOf": [
+        {"$ref": "#/$defs/measureEventBase"},
+        {
+          "type": "object",
+          "required": ["type", "staff", "sign", "line", "octave_change", "attributes"],
+          "properties": {
+            "type": {"const": "clef"},
+            "staff": {"$ref": "#/$defs/staff"},
+            "sign": {"$ref": "#/$defs/nullableString"},
+            "line": {"type": ["integer", "null"]},
+            "octave_change": {"type": ["integer", "null"]},
+            "attributes": {"$ref": "#/$defs/xmlAttributes"}
+          }
+        }
+      ]
+    },
+    "barline": {
+      "type": "object",
+      "required": ["source_ref", "xml_event_index", "location", "bar_style", "repeat", "ending", "other_musical_elements"],
+      "properties": {
+        "source_ref": {"$ref": "#/$defs/sourceRef"},
+        "xml_event_index": {"type": "integer", "minimum": 1},
+        "location": {"type": "string", "enum": ["left", "middle", "right"]},
+        "bar_style": {"$ref": "#/$defs/nullableString"},
+        "repeat": {"type": ["object", "null"]},
+        "ending": {"type": ["object", "null"]},
+        "other_musical_elements": {"type": "array", "items": {"$ref": "#/$defs/fallback"}}
+      },
+      "additionalProperties": false
+    },
+    "conversion": {
+      "type": "object",
+      "required": [
+        "parser", "layout_data_omitted", "unhandled_tags", "semantically_lossless",
+        "lossy_conditions", "warnings", "statistics"
+      ],
+      "properties": {
+        "parser": {
+          "type": "object",
+          "required": ["semantic", "fidelity"],
+          "properties": {
+            "semantic": {"const": "music21"},
+            "fidelity": {"const": "lxml"}
+          },
+          "additionalProperties": false
+        },
+        "layout_data_omitted": {"const": true},
+        "unhandled_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "semantically_lossless": {"type": "boolean"},
+        "lossy_conditions": {"type": "array", "items": {"type": "string"}},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "statistics": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
