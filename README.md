@@ -170,15 +170,9 @@ tests/                   schema and round-trip tests
 
 ## Citation
 
-Until a public repository URL, authorship record, or archival DOI is available,
-a minimal software citation is:
 
 > *MusicXML JSON Interchange*, version 1.0.0, computer software.  
-> Repository URL: **TODO before public release**.
-
-Replace the placeholder with the final repository URL and add the verified
-author or organization before publication. Do not infer a DOI; one may be added
-later if a release is archived through a service such as Zenodo.
+> Repository URL: https://github.com/xc528/musicxml-json-interchange.git
 
 This project uses music21 for normalized musical interpretation. Academic work
 that materially relies on music21 functionality should also cite music21
@@ -186,4 +180,3 @@ according to the current guidance from the
 [official music21 documentation](https://www.music21.org/music21docs/). No
 specific music21 bibliographic entry is reproduced here because an authoritative
 citation string was not present in the locally installed documentation.
-
