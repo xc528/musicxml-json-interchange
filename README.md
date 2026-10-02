@@ -65,7 +65,6 @@ python -m pip install --upgrade pip
 python -m pip install -e '.[test]'
 ```
 
-A license must be selected before public release; see `LICENSE-TODO.md`.
 
 ## Command-line usage
 
@@ -188,12 +187,3 @@ according to the current guidance from the
 specific music21 bibliographic entry is reproduced here because an authoritative
 citation string was not present in the locally installed documentation.
 
-## Release checklist
-
-Before publishing:
-
-1. Select and add an open-source license.
-2. Confirm project authorship and package metadata.
-3. Run the complete test suite on each supported Python version.
-4. Review all fixtures and examples for redistribution suitability.
-5. Replace the citation repository-URL placeholder and add verified author metadata.
